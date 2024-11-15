@@ -1,0 +1,111 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    user-select: none;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    color: #04AA6D;
+    font-size: 45px ;
+}
+
+button {
+    background-color: #04AA6D;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left : 40px;
+    padding-right : 40px;
+    border-radius: 15px;
+}
+
+input, select {
+    background-color: #eafbe9;
+    border-radius: 5px;
+    padding: 5px;
+    border: #000000 solid 1px;
+    width: 150px;
+}
+
+select {
+    width: 162px;
+}
+
+label {
+    width: 100px;
+}
+
+#form-container {
+    display: flex;
+    justify-content: center;
+    margin: 5px;
+}
+
+form {
+    border: #000000 solid 3px;
+    padding: 15px;
+    border-radius: 5%;
+}
+
+li {
+    display: flex;
+    justify-content: left;
+    margin: 5px;
+}
+
+button {
+    border: #000000 solid 1px;
+    font-size: larger;
+    transition: 0.3s;
+    padding: 15px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #00643f;
+}
+
+.cd-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    backdrop-filter: blur(5px);
+}
+  
+.cd-popup-container {
+    background: white;
+    padding: 20px 30px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+}
+  
+.cd-popup-container p {
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+  
+.cd-popup-container a {
+    color: #04AA6D;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: 1px solid #04AA6D;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+  
+.cd-popup-container a:hover {
+    background: #04AA6D;
+    color: white;
+}
