@@ -15,7 +15,7 @@ table {
 }
 
 table a {
-  color: #04AA6D;
+  color: #04aa6d;
 }
 
 .container {
@@ -24,18 +24,21 @@ table a {
 }
 
 th {
-  background-color: #04AA6D;
+  background-color: #04aa6d;
   color: white;
 }
 
-th, td {
+th,
+td {
   padding: 15px;
 }
 
-tr:nth-child(even) {background-color: #eafbe9;}
+tr:nth-child(even) {
+  background-color: #eafbe9;
+}
 
 button {
-  background-color: #04AA6D;
+  background-color: #04aa6d;
   padding: 10px 20px 10px 20px;
   border-radius: 15px;
   border: #000000 solid 1px;
@@ -61,7 +64,7 @@ button:hover {
 }
 
 h1 {
-  color:  #04AA6D;
+  color: #04aa6d;
   display: flex;
   justify-content: center;
   font-size: 45px;
@@ -70,5 +73,21 @@ h1 {
 a {
   display: flex;
   justify-content: center;
+}
 
+form {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+form button {
+  margin: 0 1rem;
+  color: white;
+}
+
+form input {
+  padding: 10px;
+  border-radius: 5px;
+  border: #000000 solid 1px;
 }

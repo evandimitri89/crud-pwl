@@ -1,7 +1,10 @@
 <?php
 require 'functions.php';
-$praktikum = query("SELECT * FROM tbpraktikum")
+$praktikum = query("SELECT * FROM tbpraktikum");
 
+if (isset($_POST["search"])) {
+  $praktikum = search($_POST["keyword"]);
+}
 ?>
 
 <!DOCTYPE html>
@@ -15,44 +18,47 @@ $praktikum = query("SELECT * FROM tbpraktikum")
 </head>
 
 <body>
-  <h1>Daftar Mahasiswa</h1>
- 
+  <h1>Daftar Lomba</h1>
+  <form action="" method="post">
+    <input type="text" name="keyword" size="40" placeholder="Masukkan Keyword" autocomplete="off">
+    <button type="submit" name="search">Cari</button>
+  </form>
   <br><br>
   <div class="container">
-  <div>
-    <table border="1" cellpadding="10" cellspacing="0">
-      <tr>
-        <th>No</th>
-        <th>Jurusan</th>
-        <th>Kelas</th>
-        <th>Hari</th>
-        <th>Waktu</th>
-        <th>Materi</th>
-        <th>Instruktur</th>
-        <th>Lokasi</th>
-        <th>Action</th>
-      </tr>
-      <?php $i = 1; ?>
-      <?php foreach ($praktikum as $row): ?>
+    <div>
+      <table border="1" cellpadding="10" cellspacing="0">
         <tr>
-          <td><?= $i; ?></td>
-          <td><?= $row["jurusan"]; ?></td>
-          <td><?= $row["kelas"]; ?></td>
-          <td><?= $row["hari"]; ?></td>
-          <td><?= $row["waktu"]; ?></td>
-          <td><?= $row["materi"]; ?></td>
-          <td><?= $row["instruktur"]; ?></td>
-          <td><?= $row["lokasi"]; ?></td>
-          <td>
-            <button id="update"><a href="update.php?id=<?= $row["id"]; ?>">Update</a></button>
-            <button id="delete"><a href="confirm.php?id=<?= $row["id"]; ?>">Delete</a></button>
-          </td>
+          <th>No</th>
+          <th>Jurusan</th>
+          <th>Kelas</th>
+          <th>Hari</th>
+          <th>Waktu</th>
+          <th>Materi</th>
+          <th>Instruktur</th>
+          <th>Lokasi</th>
+          <th>Action</th>
         </tr>
-        <?php $i++; ?>
-      <?php endforeach ?>
-    </table> 
-    <br>
-    <button><a href="create.php">ADD DATA</a></button>
+        <?php $i = 1; ?>
+        <?php foreach ($praktikum as $row): ?>
+          <tr>
+            <td><?= $i; ?></td>
+            <td><?= $row["jurusan"]; ?></td>
+            <td><?= $row["kelas"]; ?></td>
+            <td><?= $row["hari"]; ?></td>
+            <td><?= $row["waktu"]; ?></td>
+            <td><?= $row["materi"]; ?></td>
+            <td><?= $row["instruktur"]; ?></td>
+            <td><?= $row["lokasi"]; ?></td>
+            <td>
+              <button id="update"><a href="update.php?id=<?= $row["id"]; ?>">Update</a></button>
+              <button id="delete"><a href="confirm.php?id=<?= $row["id"]; ?>">Delete</a></button>
+            </td>
+          </tr>
+          <?php $i++; ?>
+        <?php endforeach ?>
+      </table>
+      <br>
+      <button><a href="create.php">ADD DATA</a></button>
     </div>
   </div>
   <br>

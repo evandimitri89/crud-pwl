@@ -51,3 +51,9 @@ function delete($id)
   mysqli_query($db, "DELETE FROM tbpraktikum WHERE id = $id");
   return mysqli_affected_rows($db);
 }
+
+function search($keyword)
+{
+  $query = "SELECT * FROM tbpraktikum WHERE jurusan LIKE '%$keyword%' OR kelas LIKE '%$keyword%' OR hari LIKE '%$keyword%' OR waktu LIKE '%$keyword%' OR materi LIKE '%$keyword%' OR instruktur LIKE '%$keyword%' OR lokasi LIKE '%$keyword%'";
+  return query($query);
+}
